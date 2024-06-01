@@ -55,7 +55,7 @@ export default function Login (){
         />
         <button type="submit" className="w-full text-white mb-6 bg-clRed hover:bg-opacity-80 focus:ring-2 focus:outline-none focus:ring-red-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Login</button>
       </form>
-      <p>Need to Signup? <Link to="/signup" class="font-medium text-gray-600 hover:underline">Create Account</Link></p>
+      <p>Need to Signup? <Link to="/signup" className="font-medium text-gray-600 hover:underline">Create Account</Link></p>
     </div>
     </div>
     </div>

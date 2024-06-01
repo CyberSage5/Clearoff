@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import {createUserWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom'
-import { auth, db } from '../client/client';
-import { setDoc, doc } from 'firebase/firestore';
+import { auth } from '../client/client';  //<<<< import db
+// import { setDoc, doc } from 'firebase/firestore';
 export default function Signup() {
   
     let navigate = useNavigate()
@@ -16,18 +16,20 @@ export default function Signup() {
   
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        console.log(userCredential)
         
-        const username = email?.substring(0, email.indexOf('@'))
-        const profileImg = `https://eu.ui-avatars.com/api/?name=${username}&background=ff936c&color=ffffff`;
+        // const username = email?.substring(0, email.indexOf('@'))
+        // const profileImg = `https://eu.ui-avatars.com/api/?name=${username}&background=ff936c&color=ffffff`;
 
-        await setDoc(doc(db, "users", userCredential.user.uid), {
-          displayName: username,
-          email: email,
-          uid: userCredential.user.uid,
-          photoURL: profileImg,
-          // createdAt: serverTimestamp(),
-        });
-        console.log(doc)
+        // await setDoc(doc(db, "users", userCredential.user.uid), {
+        //   displayName: username,
+        //   email: email,
+        //   uid: userCredential.user.uid,
+        //   photoURL: profileImg,
+          
+        //   // createdAt: serverTimestamp(),
+        // });
+        
   //       const user = userCredential.user;
   //       sessionStorage.setItem('token', user.accessToken);
   //       sessionStorage.setItem('user', JSON.stringify(user));
