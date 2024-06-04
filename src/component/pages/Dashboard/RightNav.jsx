@@ -1,10 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import { useAuth } from '../../auth/useAuth';
 // import { Link } from 'react-router-dom'; // Import for navigation links
 
 export default function RightNav () {
+   const { currentUser, logout } = useAuth();
+
   return (
     <div className="bg-[#fdf5f3] w-64 h-screen transition-transform -translate-x-full sm:translate-x-0">
+      <p>{currentUser.email}</p>
     <div className="h-full px-3 py-4">
        <ul className="space-y-2 font-medium">
        {/* <li>
@@ -39,6 +43,16 @@ export default function RightNav () {
                    <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z"/>
                 </svg>
                 <span className="flex-1 ms-3 whitespace-nowrap group-hover:text-blue-50">Inbox</span>
+                <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-gray-50 bg-gray-500 rounded-full 0 300 group-hover:text-clRed group-hover:bg-gray-50 group">3</span>
+             </a>
+          </li>
+          <li onClick={logout}>
+             <a href="#" className="flex items-center p-2 text-gray-800 rounded-lg  hover:bg-clRed group">
+             <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
+            </svg>
+
+                <span className="flex-1 ms-3 whitespace-nowrap group-hover:text-blue-50">Signout</span>
                 <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-gray-50 bg-gray-500 rounded-full 0 300 group-hover:text-clRed group-hover:bg-gray-50 group">3</span>
              </a>
           </li>

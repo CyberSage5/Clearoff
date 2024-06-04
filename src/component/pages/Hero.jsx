@@ -149,34 +149,43 @@ export default function Hero() {
 
 return (
     <>
-      <div className="flex justify-end py-3 px-4 bg-clRed shadow-md">
-        <Link to={'/login'}>
-          <button className="rounded-md bg-gray-50 text-clRed shadow-sm text-md py-2 px-5 font-medium uppercase transition duration-150 ease-in-out">
-            Get started
+      <div className="flex justify-between items-center py-3 px-4 bg-clRed shadow-md">
+      <h3 className="flex justify-between text-white text-3xl font-bold ml-4">Clearoff {/*&nbsp;<span className="text-clRed bg-white rounded-tr-md rounded-md">.ng</span>*/}</h3>
+        <div className="flex justify-between items-center">
+        <Link to={'/signup'}>
+          <button className="rounded-md bg-gray-50 text-clRed shadow-sm lg:text-md text-sm py-2 px-5 font-medium uppercase transition duration-150 ease-in-out mr-2 lg:mr-3">
+            Signup
+          </button>
+          <button className="rounded-md border border-white text-white shadow-sm lg:text-md text-sm py-2 px-5 font-medium uppercase transition duration-150 ease-in-out">
+            Login
           </button>
         </Link>
+        </div>
       </div>
-      <div className="py-16 px-2 w-full bg-gray-50 flex lg:flex-row justify-center items-center">
-        <div className="mx-4 lg:ml-12 w-auto shadow-lg flex flex-col justify-center items-start py-8 bg-gray-50 px-10 lg:w-1/2 border-l-2 border-clRed rounded-md">
-          <h1 className="mb-2 text-clRed text-6xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+
+      
+
+      <div className="py-16 px-2 w-full bg-gray-50 flex lg:flex-row justify-start lg:justify-center items-center">
+        <div className="ml-5 mt-32 z-10 lg:mt-0 lg:ml-12 shadow-lg flex flex-col justify-center items-start py-3 lg:py-8 bg-gray-50 px-5 lg:px-10 w-[65%] lg:w-1/2 border-l-2 border-clRed rounded-md">
+          <h1 className="lg:mb-2 text-clRed text-2xl lg:text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
             Clearoff
           </h1>
-          <h3 className="text-2xl font-bold mb-2">
+          <h3 className="text-sm lg:text-2xl font-bold mb-2">
             Sell PreUsed Stuffs. <span className="text-clRed">Reduce Waste</span>.
           </h3>
-          <span className="text-lg leading-6">
-            At ClearOff, we understand the challenge of decluttering your life and finding new homes for your Used items. That is why we created a platform that makes buying and selling used goods quick, convenient, and hassle-free.!
+          <span className="text-sm font-light text-gray-700 lg:font-normal leading-4 lg:text-lg lg:leading-6">
+            We understand the challenge of decluttering your life and finding new homes for your Used items. That is why we created a platform that makes buying and selling used goods quick, convenient, and hassle-free.!
           </span>
-          <Link to={'/login'}>
+          <Link to={'/dashboard'}>
             <button
               type="button"
-              className="rounded mt-4 bg-clRed text-gray-50 text-md py-4 px-8 font-medium uppercase transition duration-150 ease-in-out"
+              className="rounded mt-4 bg-clRed text-gray-50 text-sm py-2 px-4 mb-2 lg:text-lg lg:py-4 lg:px-8 font-medium uppercase transition duration-150 ease-in-out"
             >
               Get started
             </button>
           </Link>
         </div>
-        <img className="lg:w-1/2 hidden lg:block" src="/heroImg1.svg" alt="hero-image" />
+        <img className="absolute top-20 right-0 z-0 w-[80%] lg:w-1/2 lg:relative" src="/heroImg1.svg" alt="hero-image" />
       </div>
 
       {/* About */}
