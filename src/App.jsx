@@ -8,13 +8,11 @@ const Login = lazy(() => import('./component/auth/Login'));
 const Signup = lazy(() => import('./component/auth/Signup'));
 
 // import { useState, useEffect } from 'react';
-import './index.css'
+import "./index.css";
 function App() {
   // let navigate = useNavigate()
 
   // const token = sessionStorage.getItem('token');
-
-  
 
   return (
     <>
@@ -34,9 +32,9 @@ function App() {
         </Routes>
       </AuthProvider>
         </Suspense>
+
     </>
-  )
+  );
 }
 
-export default App
-
+export default App;
