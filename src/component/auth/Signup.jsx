@@ -76,7 +76,7 @@ export default function Signup() {
       await signup(emailRef.current.value, passwordRef.current.value);
       navigate('/');
     } catch {
-      setError('Failed to create an account');
+      setError('email already exist try login in');
     }
 
     setLoading(false);
