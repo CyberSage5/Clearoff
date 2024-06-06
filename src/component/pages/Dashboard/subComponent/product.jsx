@@ -4,15 +4,15 @@ import React from 'react';
 
 const products = [
   { id: 1, name: 'Nike Air MX Super 2500 - Red', price: 449, image: '/pr1.jpg', category: 'Shoes', rating: 4.5 },
-  { id: 2, name: 'Apple iPhone 13 - Black', price: 899, image: '/pr2.jpg', category: 'Electronics', rating: 4.8 },
-  { id: 3, name: 'Samsung Galaxy S21 - White', price: 799, image: '/pr3.jpg', category: 'Electronics', rating: 4.7 },
-  { id: 4, name: 'Sony WH-1000XM4 Headphones', price: 299, image: '/pr4.jpg', category: 'Electronics', rating: 4.6 },
-  { id: 5, name: 'Levi\'s 501 Original Jeans', price: 59, image: '/pr5.jpg', category: 'Clothing', rating: 4.2 },
-  { id: 6, name: 'Ray-Ban Aviator Sunglasses', price: 149, image: '/pr6.jpg', category: 'Accessories', rating: 4.4 },
-  { id: 7, name: 'Fitbit Charge 5', price: 129, image: '/pr7.jpg', category: 'Fitness', rating: 4.3 },
-  { id: 8, name: 'Amazon Echo Dot (4th Gen)', price: 49, image: '/pr8.jpg', category: 'Smart Home', rating: 4.5 },
-  { id: 9, name: 'KitchenAid Stand Mixer', price: 399, image: '/pr9.jpg', category: 'Home Appliances', rating: 4.8 },
-  { id: 10, name: 'North Face Venture 2 Jacket', price: 99, image: '/pr10.jpg', category: 'Clothing', rating: 4.6 },
+  { id: 2, name: 'Apple iPhone 13 - Black', price: 899, image: '/pr1.jpg', category: 'Electronics', rating: 4.8 },
+  { id: 3, name: 'Samsung Galaxy S21 - White', price: 799, image: '/pr1.jpg', category: 'Electronics', rating: 4.7 },
+  { id: 4, name: 'Sony WH-1000XM4 Headphones', price: 299, image: '/pr1.jpg', category: 'Electronics', rating: 4.6 },
+  { id: 5, name: 'Levi\'s 501 Original Jeans', price: 59, image: '/pr1.jpg', category: 'Clothing', rating: 4.2 },
+  { id: 6, name: 'Ray-Ban Aviator Sunglasses', price: 149, image: '/pr1.jpg', category: 'Accessories', rating: 4.4 },
+  { id: 7, name: 'Fitbit Charge 5', price: 129, image: '/pr1.jpg', category: 'Fitness', rating: 4.3 },
+  { id: 8, name: 'Amazon Echo Dot (4th Gen)', price: 49, image: '/pr1.jpg', category: 'Smart Home', rating: 4.5 },
+  { id: 9, name: 'KitchenAid Stand Mixer', price: 399, image: '/pr1.jpg', category: 'Home Appliances', rating: 4.8 },
+  { id: 10, name: 'North Face Venture 2 Jacket', price: 99, image: '/pr1.jpg', category: 'Clothing', rating: 4.6 },
 ];
 
 function renderStars(rating) {
