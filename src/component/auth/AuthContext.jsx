@@ -1,4 +1,4 @@
-// src/contexts/AuthContext.js
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { auth } from '../client/client';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
