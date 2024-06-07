@@ -30,32 +30,32 @@ export default function Signup() {
   //       uid: userCredential.user.uid,
   //       photoURL: profileImg,
   //     });
-        // const username = email?.substring(0, email.indexOf('@'))
-        // console.log(username)
-        // const profileImg = `https://eu.ui-avatars.com/api/?name=${username}&background=ff936c&color=ffffff`;
+  //       const username = email?.substring(0, email.indexOf('@'))
+  //       console.log(username)
+  //       const profileImg = `https://eu.ui-avatars.com/api/?name=${username}&background=ff936c&color=ffffff`;
 
-        // await setDoc(doc(db, "users", userCredential.user.uid), {
-        //   displayName: username,
-        //   email: email,
-        //   uid: userCredential.user.uid,
-        //   photoURL: profileImg,
+  //       await setDoc(doc(db, "users", userCredential.user.uid), {
+  //         displayName: username,
+  //         email: email,
+  //         uid: userCredential.user.uid,
+  //         photoURL: profileImg,
           
-        //   // createdAt: serverTimestamp(),
-        // });
+  //         // createdAt: serverTimestamp(),
+  //       });
         
   //       const user = userCredential.user;
   //       sessionStorage.setItem('token', user.accessToken);
   //       sessionStorage.setItem('user', JSON.stringify(user));
-    //     navigate("/login");
+  //       navigate("/login");
         
   
         
         
-    //   } catch (error) {
-    //     alert(error)
-    //     console.log("error creating user:"+ error.message)
-    //   }
-    //  }
+  //     } catch (error) {
+  //       alert(error)
+  //       console.log("error creating user:"+ error.message)
+  //     }
+  //    }
   
     const emailRef = useRef();
   const passwordRef = useRef();
