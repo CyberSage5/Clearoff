@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React from "react";
-
 const ProductCard = ({ product }) => {
   return (
     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -49,7 +47,7 @@ const ProductCard = ({ product }) => {
           </span>
           <a
             href="#"
-            className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
+            className="text-white bg-[#FE926C] hover:bg-[#e58158] focus:ring-4 focus:outline-none focus:ring-[#d97342] font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#cc6642] dark:hover:bg-[#b35c3c] dark:focus:ring-[#9b5236]"
           >
             Contact seller
           </a>
@@ -60,3 +58,4 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
+
