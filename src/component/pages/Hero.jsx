@@ -148,45 +148,69 @@ export default function Hero() {
 
 return (
     <>
-      <div className="flex justify-between items-center py-3 px-4 bg-clRed shadow-md">
-      <h3 className="flex justify-between text-white text-3xl font-bold ml-4">Clearoff {/*&nbsp;<span className="text-clRed bg-white rounded-tr-md rounded-md">.ng</span>*/}</h3>
-        <div className="flex justify-between items-center">
-        <Link to={'/signup'}>
-          <button className="rounded-md bg-gray-50 text-clRed shadow-sm lg:text-md text-sm py-2 px-5 font-medium uppercase transition duration-150 ease-in-out mr-2 lg:mr-3">
-            Signup
-          </button>
-          <button className="rounded-md border border-white text-white shadow-sm lg:text-md text-sm py-2 px-5 font-medium uppercase transition duration-150 ease-in-out">
-            Login
-          </button>
-        </Link>
+
+  <div className="bg-white sticky h-16 top-0 sm:h-20 flex items-center z-30 w-full">
+    <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="text-clRed font-black text-3xl lg:text-4xl">
+        Clearoff
+      </div>
+      <div className="flex items-center">
+        <nav className="text-white uppercase text-lg lg:flex items-center hidden">
+         <Link className="py-2 px-6 flex rounded-md bg-clRed border border-clRed">
+          Signup
+         </Link>
+         <Link className="py-2 px-6 flex rounded-md ml-2 border text-clRed border-clRed">
+          Login
+         </Link>
+        </nav>
+        <button className="lg:hidden flex flex-col ml-4">
+          <span className="w-6 h-1 bg-clRed mb-1"></span>
+          <span className="w-6 h-1 bg-clRed mb-1"></span>
+          <span className="w-6 h-1 bg-clRed mb-1"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+<main className="bg-white h-full">
+  <div className="bg-white h-full flex relative z-20 items-center overflow-hidden">
+    <div className="container mx-auto px-6 flex relative py-16">
+      <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
+        <span className="w-20 h-2 bg-gray-800 mb-4 md:-mt-20 lg:mt-4"></span>
+        <h1 className="text-6xl sm:text-3xl lg:text-7xl font-black flex flex-col leading-none text-gray-800">
+        Sell PreUsed Stuffs. 
+        <span className="text-clRed text-6xl sm:text-3xl lg:text-7xl">Reduce Waste</span>
+        </h1>
+        <p className="text-lg sm:text-lg text-gray-700 leading-7 px-2">
+          Dimension of reality that makes change possible and understandable. An
+          indefinite and homogeneous environment in which natural events and
+          human existence take place.
+        </p>
+        <div className="flex mt-4">
+          <a
+            href="#"
+            className="uppercase py-2 px-4 rounded-lg bg-clRed border-2 border-transparent text-white text-md mr-4"
+          >
+            Get started
+          </a>
+          <a
+            href="#"
+            className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-clRed text-clRed hover:text-white text-md"
+          >
+            Read more
+          </a>
         </div>
       </div>
-
-      
-
-      <div className="py-16 px-2 w-full bg-gray-50 flex lg:flex-row justify-start lg:justify-center items-center">
-        <div className="ml-5 mt-32 z-10 lg:mt-0 lg:ml-12 shadow-lg flex flex-col justify-center items-start py-3 lg:py-8 bg-gray-50 px-5 lg:px-10 w-[65%] lg:w-1/2 border-l-2 border-clRed rounded-md">
-          <h1 className="lg:mb-2 text-clRed text-2xl lg:text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
-            Clearoff
-          </h1>
-          <h3 className="text-sm lg:text-2xl font-bold mb-2">
-            Sell PreUsed Stuffs. <span className="text-clRed">Reduce Waste</span>.
-          </h3>
-          <span className="text-sm font-light text-gray-700 lg:font-normal leading-4 lg:text-lg lg:leading-6">
-            We understand the challenge of decluttering your life and finding new homes for your Used items. That is why we created a platform that makes buying and selling used goods quick, convenient, and hassle-free.!
-          </span>
-          <Link to={'/login'}>
-            <button
-              type="button"
-              className="rounded mt-4 bg-clRed text-gray-50 text-sm py-2 px-4 mb-2 lg:text-lg lg:py-4 lg:px-8 font-medium uppercase transition duration-150 ease-in-out"
-            >
-              Get started
-            </button>
-          </Link>
-        </div>
-        <img className="absolute top-20 right-0 z-0 w-[80%] lg:w-1/2 lg:relative" src="/heroImg1.svg" alt="hero-image" />
+      <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
+        <img
+          src="/Hero.png"
+          className="max-w-lg md:max-w-2xl m-auto md:-mt-12 md:ml-24"
+        />
       </div>
+    </div>
+  </div>
+</main>
 
+    
       {/* About */}
       <div className="p-10 lg:p-14 flex flex-col-reverse justify-between items-center lg:flex-row-reverse">
         <div className="lg:w-1/2">
