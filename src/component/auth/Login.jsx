@@ -15,8 +15,8 @@ export default function Login (){
       await login(emailRef.current.value, passwordRef.current.value);
       navigate('/dashboard');
     } catch(error) {
-      setError('incorrect email or password');
-      console.log(error)
+      const errorMessage = error.message.match(/auth\/([^)]+)/);
+      setError(errorMessage[1]);
     }
     }
 
