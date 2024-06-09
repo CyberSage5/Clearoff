@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-white rounded-lg shadow">
+    <footer className="bg-white rounded-lg w-full shadow">
     {/* <p>
       Illustrations by <a href="https://storyset.com">Storyset</a>
     </p> */}
