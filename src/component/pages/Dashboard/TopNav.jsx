@@ -1,95 +1,165 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {
+  Bell,
+  CircleUser,
+  Search,
+  LineChart,
+  Package,
+  ShoppingCart,
+  Users,
+  Menu,
+  Home
+} from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { useAuth } from '../../auth/useAuth';
 
 export default function TopNav() {
+  const { logout } = useAuth();
+
+
   return (
-    <nav className="bg-[#ff936c] shadow-sm sticky top-0 z-10">
-  <div className="max-w-screen flex justify-between items-center mx-auto p-4">
-    
-      <span className="flex w-1/6 self-center text-3xl md:ml-4 font-semibold whitespace-nowrap text-white">
-        Clearoff <span className='text-clRed'>.</span>
-      </span>
+<header className="flex h-20 items-center w-full gap-20 px-4 lg:h-20 lg:px-6">
 
-      <form className="hidden md:flex items-center md:flex-grow mx-4">   
-    <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
-    <div className='relative flex-grow mr-2'>
-        <div className="absolute z-10 inset-y-0 end-5 flex items-center ps-5k pointer-events-auto">
-            <svg className="w-4 h-4 text-clRed " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
-        </div>
-        <input type="text" id="default-search" className="flex items-center w-full p-3 ps-4 text-sm text-gray-900 rounded-xl bg-gray-50 outline-none relative" placeholder="Search Mockups, Logos..." required />
-    </div>
-        
-</form>
+{/* slideOut menu */}
 
-    <div className="flex-none md:order-2 items-center">
+<Sheet>
+                <SheetTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="shrink-0 md:hidden"
+                  >
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Toggle navigation menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="flex flex-col">
+                  <nav className="grid gap-2 text-lg font-medium">
+                    <Link
+                      href="#"
+                      className="flex items-center gap-2 text-lg font-semibold"
+                    >
+                      <span className="text-clRed text-2xl font-extrabold mb-4">Clearoff</span>
+                    </Link>
+                    <Link
+                      href="#"
+                      className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:border hover:border-clRed hover:text-clRed"
+                    >
+                      <Home className="h-5 w-5" />
+                      Dashboard
+                    </Link>
+                    <Link
+                      href="#"
+                      className="mx-[-0.65rem] flex items-center gap-4 rounded-xl py-2 px-3 hover:text-white hover:bg-clRed group"
+                    >
+                      <ShoppingCart className="h-5 w-5" />
+                      Orders
+                      {/* <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-black goup-hover:bg-white group-hover:text-clRed">
+                        6
+                      </Badge> */}
+                    </Link>
+                    <Link
+                      href="#"
+                      className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-white hover:bg-clRed"
+                      >
+                      <Package className="h-5 w-5" />
+                      Products
+                    </Link>
+                    <Link
+                      href="#"
+                      className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-white hover:bg-clRed"
+                      >
+                      <Users className="h-5 w-5" />
+                      Customers
+                    </Link>
+                    <Link
+                      href="#"
+                      className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 hover:text-white hover:bg-clRed"
+                      >
+                      <LineChart className="h-5 w-5" />
+                      Analytics
+                    </Link>
+                  </nav>
+                  {/* <div className="mt-auto">
+                    <Card>
+                    <CardHeader>
+                    <CardTitle>Upgrade to Pro</CardTitle>
+                    <CardDescription>
+                    Unlock all features and get unlimited access to our
+                    support team.
+                    </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                      <Button size="sm" className="w-full">
+                      Upgrade
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </div> */}
+                </SheetContent>
+              </Sheet>
 
-      <button
-        type="button"
-        data-collapse-toggle="navbar-search"
-        aria-controls="navbar-search"
-        aria-expanded="false"
-        className="md:hidden text-clRed hover:bg-gray-100 focus:outline-none hover:-translate-y-1 transition-all text-sm p-2.5 me-1 rounded-lg"
-      >
-        <svg
-          className="w-5 h-5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 20 20"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-          />
-        </svg>
-        <span className="sr-only">Search</span>
-      </button>
+              <div className="flex h-14 items-center px-4 lg:h-[60px] lg:px-6">
+                <Link href="/" className="flex items-center gap-2 font-semibold">
+                  <span className="text-clRed text-2xl font-extrabold">Clearoff</span>
+                </Link>
+                <Button variant="outline" size="icon" className="ml-4 h-8 w-8">
+                  <Bell className="h-4 w-4" />
+                  <span className="sr-only">Toggle notifications</span>
+                </Button>
+              </div> 
 
-  
-      <button
-        data-collapse-toggle="navbar-search"
-        type="button"
-        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-clRed rounded-lg md:hidden focus:outline-none hover:-translate-y-1 transition-all"
-        aria-controls="navbar-search"
-        aria-expanded="false"
-      >
-        {/* <span className="sr-only">Open main menu</span> */}
-        <svg
-          className="w-5 h-5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 17 14"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M1 1h15M1 7h15M1 13h15"
-          />
-        </svg>
-      </button>
+              {/* search bar */}
+              <div className="w-full h-full flex items-center">
+                <form className="w-full">
+                  <div className="relative">
+                    <Search className="absolute left-2.5 top-2.5 h-4 w-4" />
+                    <Input
+                      type="search"
+                      placeholder="Search products..."
+                      className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-full"
+                    />
+                  </div>
+                </form>
+              </div>
 
 
-    </div>
-      <div className='hidden w-1/6 items-center md:flex md:justify-end px-auto'>
-      <div className='mr-4'>
-      <svg className="w-8 h-8 text-gray-50" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-  <path fillRule="evenodd" d="M4 4a1 1 0 0 1 1-1h1.5a1 1 0 0 1 .979.796L7.939 6H19a1 1 0 0 1 .979 1.204l-1.25 6a1 1 0 0 1-.979.796H9.605l.208 1H17a3 3 0 1 1-2.83 2h-2.34a3 3 0 1 1-4.009-1.76L5.686 5H5a1 1 0 0 1-1-1Z" clipRule="evenodd"/>
-</svg>
+              {/* user Icon with dropdown */}
+         <div>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="secondary" size="icon" className="rounded-full bg-clRed text-white">
+                    <CircleUser className="h-5 w-6" />
+                    <span className="sr-only">Toggle user menu</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Settings</DropdownMenuItem>
+                  <DropdownMenuItem>Support</DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>
+                    <span onClick={logout()}>
+                    Logout
+                    </span>
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
       </div>
-        <img
-        className='size-[2.4rem] rounded-xl border border-gray-50 p-0.5'
-         src="/profile.jpg" alt="profile-image" />
-      </div>
-  </div>
-</nav>
-
+            </header>
   )
 }

@@ -2,6 +2,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
+import Footer from './footer'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 export default function Hero() {
   const featuredProducts = [
     {
@@ -155,40 +165,57 @@ return (
         Clearoff
       </div>
       <div className="flex items-center">
-        <nav className="text-white uppercase text-lg lg:flex items-center hidden">
-         <Link className="py-2 px-6 flex rounded-md bg-clRed border border-clRed">
-          Signup
-         </Link>
-         <Link className="py-2 px-6 flex rounded-md ml-2 border text-clRed border-clRed">
+        <nav className="uppercase text-s text-lg lg:flex items-center hidden">
+         <Link to="login" className="py-2 px-6 text-sm flex rounded-md ml-2 border text-clRed border-clRed">
           Login
          </Link>
+         <Link to="signup" className="py-2 px-6 ml-3 text-white text-sm flex rounded-md bg-clRed border border-clRed">
+          Signup
+         </Link>
         </nav>
-        <button className="lg:hidden flex flex-col ml-4">
-          <span className="w-6 h-1 bg-clRed mb-1"></span>
-          <span className="w-6 h-1 bg-clRed mb-1"></span>
-          <span className="w-6 h-1 bg-clRed mb-1"></span>
-        </button>
+        {/* drop down menu for small screens */}
+        <div className="lg:hidden absolute right-3 top-6">
+
+        <DropdownMenu>
+  <DropdownMenuTrigger>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6
+  ">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+</svg>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <Link to="signup">
+    <DropdownMenuItem>Signup</DropdownMenuItem>
+    </Link>
+    <Link to="login">
+    <DropdownMenuItem>Login</DropdownMenuItem>
+    </Link>
+  </DropdownMenuContent>
+</DropdownMenu>
+        </div>
+
       </div>
     </div>
   </div>
+  
 <main className="bg-white h-full">
   <div className="bg-white h-full flex relative z-20 items-center overflow-hidden">
     <div className="container mx-auto px-6 flex relative py-16">
       <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
         <span className="w-20 h-2 bg-gray-800 mb-4 md:-mt-20 lg:mt-4"></span>
-        <h1 className="text-6xl sm:text-3xl lg:text-7xl font-black flex flex-col leading-none text-gray-800">
+        <h1 className="text-6xl sm:text-3xl lg:text-6xl font-black flex flex-col leading-none text-gray-800">
         Sell PreUsed Stuffs. 
-        <span className="text-clRed text-6xl sm:text-3xl lg:text-7xl">Reduce Waste</span>
+        <span className="text-clRed text-6xl sm:text-3xl mb-4 lg:text-6xl">Reduce Waste</span>
         </h1>
         <p className="text-lg sm:text-lg text-gray-700 leading-7 px-2">
-          Dimension of reality that makes change possible and understandable. An
-          indefinite and homogeneous environment in which natural events and
-          human existence take place.
+        We understand the challenge of decluttering your life and finding new homes for your Used items. That is why we created a platform that makes buying and selling used goods quick, convenient, and hassle-free.!
         </p>
         <div className="flex mt-4">
           <a
             href="#"
-            className="uppercase py-2 px-4 rounded-lg bg-clRed border-2 border-transparent text-white text-md mr-4"
+            className="uppercase py-2 px-4 rounded-lg bg-clRed border-clRed border-2 border-transparent text-white text-md mr-4"
           >
             Get started
           </a>
@@ -200,11 +227,17 @@ return (
           </a>
         </div>
       </div>
+
+      {/* blob background */}
+      <div className="z-0">
+        <img src="/blobBg.svg" className="hidden lg:block absolute -top-24" alt="" />
+        </div>
+      {/* boxes image */}
       <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
         <img
           src="/Hero.png"
-          className="max-w-lg md:max-w-2xl m-auto md:-mt-12 md:ml-24"
-        />
+          className="max-w-lg md:max-w-2xl z-10 m-auto md:-mt-12 md:ml-24"
+          />      
       </div>
     </div>
   </div>
@@ -231,6 +264,7 @@ return (
           ))}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

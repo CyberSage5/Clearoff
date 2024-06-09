@@ -11,7 +11,7 @@ export default function Container() {
    <div className="flex flex-col h-screen w-full">
     <TopNav/>
     <div className="flex h-screen w-full">  
-      <div className="w-1/10">
+    <div className="h-screen w-[20%]">  
         <RightNav />
       </div>
       <div className="flex-1">

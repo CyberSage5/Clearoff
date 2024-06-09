@@ -21,19 +21,28 @@ export default function Login (){
     }
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-[url('/login.svg')] bg-no-repeat bg-center bg-contain">
+    <div className="flex flex-row items-center justify-center md:h-screen lg:py-0">
       {error && <div className="absolute top-0 right-0 bg-clRed text-white px-8 lg:px-10 py-1 flex justify-center items-center">{error}</div>}
-    <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
-    <div className="p-6 sm:p-8 space-y-4">
+ {/* side image */}
+ <img
+ className="w-1/2 h-screen"
+  src="/login.png" alt="signup-image" />
+
+    {/* clearoff's text */}
+    <div className="absolute left-6 top-10">
+    <h3 className="text-clRed text-3xl font-bold mr-4">Clearoff&nbsp;<span className="text-white bg-clRed rounded-md">.ng</span></h3>
+    </div>
+    <div className="w-1/2 flex justify-center items-center bg-white mx-auto h-full md:mt-0 sm:max-w-md lg:p-0">
+    <div className="w-full p-6 sm:p-8 space-y-4 rounded-lg">
       <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 mb-2">Login</h1>
 
       <form 
       onSubmit={handleSubmit} 
       className="flex flex-col items-start space-y-3">
       <label htmlFor="email"
-      className="block text-md font-medium text-gray-900">Email</label>
+      className="block text-md font-medium text-black">Email</label>
         <input
-         className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:outline-none block w-full p-2.5"
+         className="bg-white border border-black text-black sm:text-sm rounded-lg focus:outline-none block w-full p-2.5"
           type="email"
           placeholder="Your Email"
           required
@@ -41,9 +50,9 @@ export default function Login (){
         />
 
         <label htmlFor="password"
-        className="block text-sm font-medium text-gray-900">Password</label>
+        className="block text-sm font-medium text-black">Password</label>
         <input
-         className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:outline-none block w-full p-2.5"
+         className="bg-gray-50 border border-black text-black sm:text-sm rounded-lg focus:outline-none block w-full p-2.5"
           type="password"
           placeholder="Your Password"
           required
